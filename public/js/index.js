@@ -1,16 +1,24 @@
-<<<<<<< HEAD
-let campoDeBusca = document.getElementById("campo-de-busca")
-console.log(campoDeBusca)
+// *************************************************************************
+//************ **********   Capturando os elementos HTML ****************************
+// *************************************************************************
 
 
-let btBuscar = document.querySelector(".btBuscar")
-console.log(btBuscar)
 
-let main = document.querySelector("main")
+// FORMAS DE SELECIONAR ELEMENTOS DA PÁGINA
+let campoDeBusca = document.getElementById("campo-de-busca");
+/**
+ * querySelector:
+ * document.querySelector("#seletor .css");
+ */
+let btBuscar = document.querySelector(".btBuscar");
+// Capturem o elemento main (pai de todos os articles)
+let main = document.querySelector("main");
 
-let pizzasDoMenu = {
-    
-// CRIAR UM ELEMENTO E ADICIONAR AO FINAL DA MAIN
+// *************************************************************************
+//************    variavel avulsa com os dados ****************************
+// *************************************************************************
+
+
 let pizzas = [
     {
         "id": 1,
@@ -189,60 +197,16 @@ let pizzas = [
         "score": 3
     }
 ]
- 
-}
 
 
-function mostrarPizza(pizza){
-    let article = document.createElement("article")
 
-    article.innerHTML =`
-            <img src="${pizza.img}" alt="${pizza.nome}">
-            <h2>${pizza.nome}</h2>
-            <span>${pizza.preco}</span>
-            <a href="${pizza.id}">Ver mais</a>
-            <button>Add+</button>
-    `
-    main.appendChild(article)
+// *************************************************************************
+//************    Funções que alteram a DOM ****************************
+// *************************************************************************
 
-}
-
-function mostrarPizzas(pizzas){
-    mostrarPizza(pizzas)
-}
-
-mostrarPizzas(pizzasDoMenu)
-=======
-// FORMAS DE SELECIONAR ELEMENTOS DA PÁGINA
-let campoDeBusca = document.getElementById("campo-de-busca");
-
-/**
- * querySelector:
- * document.querySelector("#seletor .css");
- */
-let btBuscar = document.querySelector(".btBuscar");
-
-// Capturem o elemento main (pai de todos os articles)
-let main = document.querySelector("main");
-
-// CRIAR UM ELEMENTO E ADICIONAR AO FINAL DA MAIN
-let pizzaDePepperoni = {
-    "id": 2,
-    "nome": "Pepperoni",
-    "ingredientes": [
-        "mussarela",
-        "pepperoni",
-        "cebola"
-    ],
-    "preco": 48.55,
-    "img": "/img/pepperoni.jpg",
-    "destaque": false,
-    "score": 24
-}
 
 function showPizza(pizza){
     let article = document.createElement("article");
-
     article.innerHTML = `
         <img src="${pizza.img}" alt="${pizza.nome}">
         <h2>${pizza.nome}</h2>
@@ -250,10 +214,59 @@ function showPizza(pizza){
         <a href="${pizza.id}">Ver mais</a>
         <button>Add+</button>
     `;
-
     main.appendChild(article);
 }
 
-showPizza(pizzaDePepperoni);
+function showPizzas(pizzas){
 
->>>>>>> fe33e1c2c326de166ef50e478a7782b59959107b
+    // Limpando o elemento main
+    main.innerHTML = '';
+
+    // Forma 1: Elegante, linda e gatinha
+    pizzas.forEach(showPizza);
+
+    // Forma 2: Bonitinha
+    for (const pizza of pizzas) {
+        showPizza(pizza);
+    }
+
+    // Forma 3: Feia
+    for (let i = 0; i < pizzas.length; i++) {
+        showPizza(pizzas[i]);
+    }
+}
+showPizzas(pizzas);
+
+
+// *************************************************************************
+//************    Funções auxiliares ****************************
+// *************************************************************************
+
+
+
+function onCampoDeBuscaKeyup(){
+
+    // Capturar o trecho buscado pelo usuário
+    const trechoBuscado = campoDeBusca.value;
+
+    // Criar um array com as pizzas filtradas
+    const pizzasFiltradas = filtrarPizzas(pizzas, trechoBuscado);
+
+    // Mostrar as pizzas filtradas
+    showPizzas(pizzasFiltradas);
+
+}
+
+function filtrarPizzas(pizzas, trechoBuscado){
+    let pizzasFiltradas = pizzas.filter(
+        pizza => pizza.nome.toUpperCase().includes(trechoBuscado.toUpperCase())
+    );
+    return pizzasFiltradas;
+}
+
+
+// *************************************************************************
+//************   Associando a execução de uma função a um evento ****************************
+// *************************************************************************
+// 
+campoDeBusca.addEventListener('keyup', onCampoDeBuscaKeyup);
