@@ -27,5 +27,11 @@ servidor.get("/perfil", (req, res)=>{
     console.log("acessado")
 })
 
+servidor.get("/cadastro", (req, res)=>{
+    res.sendFile(__dirname + "/views/cadastro.html")
+    console.log("acessado")
+})
+
+
 //4 - colocar no modo "aguarando Requisição"
 servidor.listen(3000)
