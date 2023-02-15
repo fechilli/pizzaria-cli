@@ -174,5 +174,25 @@
         "img": "/img/quatroqueijos.jpg",
         "destaque": true,
         "score": 3
+    },
+    {
+        "nome": "",
+        "preco": 0,
+        "ingredientes": ""
+    },
+    {
+        "nome": "oi",
+        "preco": 65,
+        "ingredientes": "uva morango"
+    },
+    {
+        "nome": "Felipe",
+        "preco": 6,
+        "ingredientes": "anitta gloria e valeska"
+    },
+    {
+        "nome": "Felipe",
+        "preco": 6255,
+        "ingredientes": "anitta gloria e valeska"
     }
 ]
