@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/cadastro.css">
     <script src="/js/MascaraCpf.js" defer></script>
     <script src="/js/cadastro.js" defer></script>
+    
     <title>Pizzaria Fantástica</title>
 
 </head>
@@ -16,21 +17,21 @@
     
     <main>
         <form >
-            <div>
+            <div class="campo-form">
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite Seu Nome" required >
             </div>
-            <div>
+            <div class="campo-form">
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" id="email" placeholder="Email" >
             </div>
-            <div>
+            <div class="campo-form">
                 <label for="cep">CEP: </label>
                 <input type="text" name="cep" id="cep" placeholder="CEP" pattern="^[0-9]{5}[0-9]{3}$">
                 <span class="error-msg">Preencha o campo corretamente</span>
             </div>
 
-            <div>
+            <div class="campo-form">
                 <label for="cpf">CPF: </label>
                 <input type="text" name="cpf" id="cpf" placeholder="Cpf" >
                 

@@ -176,23 +176,14 @@
         "score": 3
     },
     {
-        "nome": "",
-        "preco": 0,
-        "ingredientes": ""
-    },
-    {
-        "nome": "oi",
-        "preco": 65,
-        "ingredientes": "uva morango"
-    },
-    {
-        "nome": "Felipe",
-        "preco": 6,
-        "ingredientes": "anitta gloria e valeska"
-    },
-    {
-        "nome": "Felipe",
-        "preco": 6255,
-        "ingredientes": "anitta gloria e valeska"
+        "nome": "teste",
+        "preco": 32.3,
+        "ingredientes": [
+            "555"
+        ],
+        "img": "/img/1680136533884-Captura de tela 2022-05-20 212751.png",
+        "destaque": false,
+        "score": 0,
+        "id": 14
     }
 ]

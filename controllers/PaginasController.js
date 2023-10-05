@@ -51,7 +51,7 @@ const PaginasController = {
                 "score": 27
             }
         ]
-        let nomeDoUsuario = "Ligia Pretel";
+        
         return res.render('carrinho.ejs', {carrinho, nomeDoUsuario});
     },
 

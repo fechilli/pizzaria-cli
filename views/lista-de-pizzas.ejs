@@ -99,14 +99,14 @@
             </thead>
             <tbody>
                 <% for(const p of pizzas) { %>
-                    <tr>
+                    <tr> 
                         <td><%= p.id %></td>
                         <td><img src="<%= p.img %>" alt="<%= p.nome %>"></td>
                         <td><%= p.nome %></td>
                         <td>R$ <%= p.preco %></td>
                         <td>
-                            <a class="bt" href="#">Editar</a>
-                            <a class="bt" href="#">Remover</a>
+                            <a class="bt" href="/adm/pizzas/<%=p.id %>/edit">Editar</a>
+                            <a class="bt" href="/adm/pizzas/<%=p.id %>/delete">Remover</a>
                         </td>
                     </tr>
                 <% } %>
