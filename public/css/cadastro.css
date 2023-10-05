@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 main {
     position: relative;
     top: 90px;
@@ -24,3 +25,21 @@ main > form {
     justify-content: center;
     align-items: center;
 } */
+=======
+main{
+    position: relative;
+    top: 90px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content:center;
+    
+}
+
+main>form{
+    width: 600px;
+    background-color: rgba(0,0,0,0.5);
+    padding:40px;
+    filter: blur(0.8);
+
+}
+>>>>>>> d08fad686e165225efc2de27d6fbb363c985b6f6

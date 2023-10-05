@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Captura de elementos de interesse =======
 const inputCep = document.querySelector("#cep");
 
@@ -42,3 +43,41 @@ async function carregaInfoDoCepAsync(cep){
 // =========================================
 // Associação de eventos e handlers
 inputCep.addEventListener('keyup', onInputCepKeyup);
+=======
+// captura dos elementos de interesse
+
+const inputCep = document.querySelector('#cep');
+
+
+//****************************************************************** */
+// funções que lidam com os eventos
+
+function onInputCepKeyup(){
+
+    if(inputCep.value.length == 9){
+        carregaInfoDOCep(inputCep.value)
+    }
+}
+//****************************************************************** 
+
+function carregaInfoDOCep(cep){
+
+    let url = `https://viacep.com.br/ws/07903100/json/`
+    let promessa = fetch(url)
+
+    promessa.then(
+        (response)=>{
+            let promessaDeResultado = response.json();
+            promessaDeResultado.then(
+                (resultado)=>{console.log(resultado)}
+            )
+            console.log(promessaDeResultado)
+            
+        }    
+     
+);
+
+// associaçao de eventos e handles
+
+inputCep.addEventListener('keyup', onInputCepKeyup)
+>>>>>>> d08fad686e165225efc2de27d6fbb363c985b6f6

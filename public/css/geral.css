@@ -127,6 +127,28 @@ form .error-msg{
     display: none;
 }
 
+form input:invalid{
+    outline: 2px solid rgb(197, 40, 40);
+}
+
+form input:valid{
+    border: 2px solid green;
+}
+
+form input:invalid + .error-msg{
+    display: block;
+}
+form .error-msg{
+    color: crimson;
+    display: none;
+    font-size:14px
+}
+
+form input:required::after{
+    content: "*";
+    
+}
+
 @media screen and (max-width: 550px) {
     .btBuscar {
         display: none;

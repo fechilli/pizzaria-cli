@@ -4,18 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Pizzaria Fantástica</title>
     <link rel="stylesheet" href="/css/geral.css">
     <link rel="stylesheet" href="/css/cadastro.css">
     <script src="/js/cadastro.js" defer></script>
     <script src="/js/MascaraCpf.js" defer></script>
+=======
+    <link rel="stylesheet" href="/css/geral.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+    <script src="/js/MascaraCpf.js" defer></script>
+    <script src="../public/js/cadastro.js" defer></script>
+    <title>Pizzaria Fantástica</title>
+
+>>>>>>> d08fad686e165225efc2de27d6fbb363c985b6f6
 </head>
 <body>
     <header>
         <a href="/">
+<<<<<<< HEAD
             <img src="/img/logo.svg" alt="Logo da Pizzaria Fantástica" width="64" height="64">
         </a>
         <input type="text" name="" id="campo-de-busca" placeholder="Qual pizza você procura?">
+=======
+            <img src="/img/logo.svg"  id="logo" alt="Logo da Pizzaria Fantástica">
+        </a>
+        <input type="text" name="campo-de-busca" id="campo-de-busca" placeholder="Qual pizza você procura?">
+>>>>>>> d08fad686e165225efc2de27d6fbb363c985b6f6
         <button class="btBuscar">Buscar</button>
         <a href="/carrinho">
             <img src="" alt="">
@@ -25,6 +40,7 @@
             <img src="" alt="">
         </a>
     </header>
+<<<<<<< HEAD
 
     <main>
         <form>
@@ -64,6 +80,34 @@
                 <button type="reset">Resetar</button>
                 <button type="submit">Enviar</button>
             </div>
+=======
+    <main>
+        <form >
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite Seu Nome" required >
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" placeholder="Email" >
+            </div>
+            <div>
+                <label for="cep">CEP: </label>
+                <input type="text" name="cep" id="cep" placeholder="CEP" pattern="^[0-9]{5}[0-9]{3}$">
+                <span class="error-msg">Preencha o campo corretamente</span>
+            </div>
+
+            <div>
+                <label for="cpf">CPF: </label>
+                <input type="text" name="cpf" id="cpf" placeholder="Cpf" >
+                
+            </div>
+            <div class="controles">
+                <button type="reset">Resetar</button>
+                <button type="submit"> Enviar</button>
+            </div>
+            
+>>>>>>> d08fad686e165225efc2de27d6fbb363c985b6f6
         </form>
     </main>
 </body>
