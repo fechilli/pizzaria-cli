@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session')
 //const bloqueiaForaDeHora = require('./middlewares/bloqueiaForaDeHora');
-//const registraRequisicao = require('./middlewares/registrarRequisicao');
+const registraRequisicao = require('./middlewares/registrarRequisicao');
 const router = require('./router');
 
 // 2 - Criar o servidor
@@ -24,7 +24,7 @@ servidor.use(express.static(path.join(__dirname, 'public')))
 servidor.use(express.urlencoded({extended: false}))
 
 // - Configurar o middleware
-//servidor.use(registraRequisicao)
+servidor.use(registraRequisicao)
 // servidor.use(bloqueiaForaDeHora)
 
 // 3 - Definir roteador a ser utilizado
