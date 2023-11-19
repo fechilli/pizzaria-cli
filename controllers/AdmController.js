@@ -7,8 +7,9 @@ const bcrypt = require("bcrypt")
 const AdmController = {
     listarPizzas: (req,res) => {
         const pizzas = PizzasServices.carregarPizzas()
+        const msg = req.query.msg
 
-        res.render("lista-de-pizzas.ejs", {pizzas})
+        res.render("lista-de-pizzas.ejs", {pizzas, msg})
     },
 
     criarPizza: (req, res) => {
@@ -57,14 +58,14 @@ const AdmController = {
     },
     login: (req, res) => {
        
-// capturar o email e a senha digitadas pelo administrador
+        // capturar o email e a senha digitadas pelo administrador
         const{ email, password} = req.body
 
       
 
         
 
-// verificar a existencia do administrador
+        // verificar a existencia do administrador
 
         let adm = loginAdm.find(adm => adm.email === email)     
 
@@ -73,23 +74,31 @@ const AdmController = {
         }
  
 
-// caso não exista enviar mensagem de erro
-//verificar a senha do administrador
+        // caso não exista enviar mensagem de erro
+        //verificar a senha do administrador
         
         const senhaOk = bcrypt.compareSync(password, adm.senha)
         if(!senhaOk) {
             res.send("Falha no login")
         }
-// caso nao seja valida enviar mensagem de erro
+        // caso nao seja valida enviar mensagem de erro
 
 
-// criar session/coockie do adm
+        // criar session/coockie do adm
 
-req.session.admLogado = true;
-// redirecionar para /adm/pizzas
+        req.session.admLogado = true;
+        
+        // redirecionar para /adm/pizzas
 
-res.redirect("/adm/pizzas")
+        res.redirect("/adm/pizzas")
 
+    },
+    deletePizza:(req, res) => {
+         //capturar  o id  da pizza
+
+         const id = req.params.id
+         PizzasServices.removerPizza(id)
+         res.redirect("/adm/pizzas?msg=pizzaApagada")
     }
 }
 
